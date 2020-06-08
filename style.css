@@ -1,0 +1,131 @@
+/* import some fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+/* box sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    border: 2px solid teal;
+    position: relative;
+    top: -25px;
+    border-radius: 5%;
+    padding: 100%;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    color: white;
+    background-color: teal;
+}
+
+#time {
+    margin-left: 3px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    transform: scale(1);
+}
+
+.gradient-circle {
+    /*
+    background: conic-gradient(
+      #55b7a4 0%,
+      #4ca493 40%,
+      #fff 40%,
+      #fff 60%,
+      #336d62 60%,
+      #2a5b52 100%
+    );
+    not firefox compatiable*/
+    background-color: #5db6d188;
+    height: 320px;
+    width: 320px;
+    z-index: -2;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+.circle {
+    background-color: #00407491;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.pointer-container{
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    width: 20px;
+    height: 190px;
+    animation: rotate 19s linear forwards infinite;
+    transform-origin: bottom center;
+}
+
+.pointer{
+    background-color: blanchedalmond;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+
+}
+
+.container.grow{
+    animation: grow 4s linear forwards;
+}
+.container.shrink{
+    animation: shrink 8s linear forwards ;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);;
+    }
+}
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
