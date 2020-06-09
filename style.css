@@ -1,14 +1,13 @@
 /* import some fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-/* box sizing */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');/* box sizing */
 * {
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-image: url("bg.jpg");
+    background-image: url("img/gs_sea.jpg");
     background-size: cover;
     min-height: 100vh;
     overflow: hidden;
@@ -19,7 +18,8 @@ body {
 }
 
 h1 {
-    border: 2px solid teal;
+    font-family: Playfair Display;
+    border: 2px solid rgba(35, 68, 112, 0.966);
     position: relative;
     top: -25px;
     border-radius: 5%;
@@ -27,7 +27,7 @@ h1 {
     padding-bottom: 8px;
     padding-top: 8px;
     color: white;
-    background-color: teal;
+    background-color: rgba(35, 68, 112, 0.966);
 }
 
 #time {
@@ -66,6 +66,10 @@ h1 {
     left: -10px;
 }
 
+.button {
+    background-color: white;
+}
+
 .circle {
     background-color: #00407491;
     height: 100%;
@@ -88,7 +92,7 @@ h1 {
 }
 
 .pointer{
-    background-color: blanchedalmond;
+    background-color: #004074;
     height: 20px;
     width: 20px;
     border-radius: 50%;

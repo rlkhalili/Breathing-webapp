@@ -1,6 +1,7 @@
 const text = document.querySelector('#text');
 const container = document.querySelector('.container');
 const timeBreath = document.querySelector('#time');
+const startButton = document.querySelector('.button');
 
 const breathIn = 4000;
 const hold = 7000;
@@ -10,6 +11,7 @@ const totalBreath = breathIn + breathOut + hold;
 
 breathAnimation();
 setInterval(breathAnimation, totalBreath);
+
 
 function breathAnimation(){
     text.innerText = 'Breathe in for';
