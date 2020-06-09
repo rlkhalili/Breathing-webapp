@@ -15,17 +15,32 @@ setInterval(breathAnimation, totalBreath);
 
 function breathAnimation(){
     text.innerText = 'Breathe in for';
-    timer(breathIn);
+    countdown(breathIn, timeBreath);
     container.className = 'container grow';
     setTimeout(() => {
         text.innerText = 'Hold for'
-        timer(hold);
+        countdown(hold, timeBreath);
         setTimeout(() => {
             text.innerText = 'Breath out for';
-            timer(breathOut);
+            countdown(breathOut, timeBreath);
             container.className = 'container shrink';
         }, hold);
     }, breathIn);
+}
+
+
+function countdown(time, element, string = null){
+    let remaining = (time / 1000);    // Converts from ms
+    element.innerText = remaining + string;
+    remaining--;
+    let timer = setInterval(() => {
+        if (remaining < 1){
+            clearInterval(timer);
+        } else {
+            element.innerText = remaining + string;
+        }
+        remaining--;
+    }, 1000);
 }
 
 /*
@@ -40,6 +55,7 @@ function timer(){
 }
 */
 
+/*
 function timer(time){
     let counter = time / 1000;
     timeBreath.innerText = counter;
@@ -49,3 +65,4 @@ function timer(time){
     }, 1000, 1);
     setTimeout(() => clearInterval(refreshId), time);
 }
+*/
