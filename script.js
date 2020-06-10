@@ -1,17 +1,22 @@
 const text = document.querySelector('#text');
 const container = document.querySelector('.container');
 const timeBreath = document.querySelector('#time');
-const startButton = document.querySelector('.button');
+const pointer = document.querySelector('.pointer');
+const pointerC = document.querySelector('.pointer-container');
+const button = document.querySelector('#start')
 
 const breathIn = 4000;
 const hold = 7000;
 const breathOut = 8000;
 const totalBreath = breathIn + breathOut + hold;
 
-
-breathAnimation();
-setInterval(breathAnimation, totalBreath);
-
+function start(){
+    pointer.className = 'pointer start';
+    button.className = 'start gone';
+    pointerC.className = 'pointer-container start';
+    breathAnimation();
+    setInterval(breathAnimation, totalBreath);
+}
 
 function breathAnimation(){
     text.innerText = 'Breathe in for';
