@@ -15,7 +15,20 @@ function start(){
     button.className = 'start gone';
     pointerC.className = 'pointer-container start';
     breathAnimation();
-    setInterval(breathAnimation, totalBreath);
+    let intervalID = setInterval(breathAnimation, totalBreath);
+    setTimeout(() => {
+        clearInterval(intervalID);
+        reset();
+    }, 4 * totalBreath);
+}
+
+function reset(){
+    text.innerText = null;
+    container.className = 'container';
+    pointer.className = 'pointer';
+    button.className = 'start';
+    pointerC.className = 'pointer-container';
+    timeBreath.innerText = null;
 }
 
 function breathAnimation(){
